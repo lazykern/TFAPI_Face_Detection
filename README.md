@@ -16,3 +16,10 @@ I am still a newbie to this subject so please forgive me for everything i have m
 
 Outputs
 
+![output0](out/out1.png)
+![output1](out/out2.png)
+![output2](out/out3.png)
+![output3](out/out4.png)
+![output4](out/out5.png)
+
+
