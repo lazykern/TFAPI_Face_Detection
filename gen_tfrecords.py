@@ -1,11 +1,4 @@
 """
-Usage:
-  # From tensorflow/models/
-  # Create train data:
-  python generate_tfrecord.py --csv_input=data/train_labels.csv  --output_path=train.record --image_dir=img/directory
-  # Create test data:
-  python generate_tfrecord.py --csv_input=data/test_labels.csv  --output_path=test.record --image_dir=img/directory
-
   Thanks to Dat Tran and Sentdex!!
 """
 from __future__ import division
@@ -16,10 +9,16 @@ import os
 import io
 import pandas as pd
 import tensorflow as tf
+import sys
+
+sys.path.append('/models/research')
+
 
 from PIL import Image
 from object_detection.utils import dataset_util
 from collections import namedtuple, OrderedDict
+
+
 
 flags = tf.app.flags
 flags.DEFINE_string('csv_input', '', 'Path to the CSV input')
@@ -101,3 +100,14 @@ def main(_):
 
 if __name__ == '__main__':
     tf.app.run()
+
+"""
+Usage:
+  # From tensorflow/models/
+  # Create train data:
+  python generate_tfrecord.py --csv_input=data/train_labels.csv  --output_path=train.record --image_dir=img/directory
+  # Create test data:
+  python generate_tfrecord.py --csv_input=data/test_labels.csv  --output_path=test.record --image_dir=img/directory
+
+  Thanks to Dat Tran and Sentdex!!
+"""
