@@ -2,9 +2,9 @@
 Usage:
   # From tensorflow/models/
   # Create train data:
-  python generate_tfrecord.py --csv_input=data/train_labels.csv  --output_path=train.record
+  python generate_tfrecord.py --csv_input=data/train_labels.csv  --output_path=train.record --image_dir=img/directory
   # Create test data:
-  python generate_tfrecord.py --csv_input=data/test_labels.csv  --output_path=test.record
+  python generate_tfrecord.py --csv_input=data/test_labels.csv  --output_path=test.record --image_dir=img/directory
 
   Thanks to Dat Tran and Sentdex!!
 """
@@ -16,6 +16,8 @@ import os
 import io
 import pandas as pd
 import tensorflow as tf
+
+sys.path.append('/C:/Users/Admin/Desktop/models/research')
 
 from PIL import Image
 from object_detection.utils import dataset_util
@@ -30,18 +32,10 @@ FLAGS = flags.FLAGS
 	
 	#เปลี่ยนส่วนนี้ V
 def class_text_to_int(row_label):
-    if row_label == 'Exusiai':
+    if row_label == 'with_mask':
         return 1
-    elif row_label == 'Texas' :
+    elif row_label == 'without_mask' :
      	return 2
-    elif row_label == 'Croissant' :
-        return 3
-    elif row_label == 'Sora' :
-        return 4
-    elif row_label == 'Mostima' :
-        return 5
-    elif row_label == 'Lappland' :
-        return 6
     else:
         None
 
