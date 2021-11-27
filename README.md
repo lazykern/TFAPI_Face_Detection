@@ -1,5 +1,6 @@
-# Arknights_Penguin_Logistics_Operators_Face_Detection
-With Tensorflow Object Detection API
+# DEPRECATED 
+Arknights_Penguin_Logistics_Operators_Face_Detection
+Tensorflow Object Detection API
 
 This project is continued from [this](https://github.com/lLoLii/Arknights_Mostima_Exusiai_Face_Detector).
 That means this is still my first project.
